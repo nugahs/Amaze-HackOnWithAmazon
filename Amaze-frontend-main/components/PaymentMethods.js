@@ -5,7 +5,7 @@ const PaymentMethods = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:7000/method', {
+        fetch('http://localhost:11000/method', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

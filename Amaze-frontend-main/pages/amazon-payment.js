@@ -29,7 +29,7 @@ const AmazonPayment = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:7000/method", {
+      .post("http://localhost:11000/method", {
         features: ["sukesssss1254a@gmail.com", 2000, "luxury"],
       })
       .then((response) => {

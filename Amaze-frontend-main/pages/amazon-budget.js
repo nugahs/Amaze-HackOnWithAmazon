@@ -85,7 +85,7 @@ const AmazonBudget1 = () => {
 
   const handleOk = () => {
     // Update budget limits
-    fetch("http://localhost:6000/budget/threshold/sukesssss1254a@gmail.com", {
+    fetch("http://localhost:10000/budget/threshold/sukesssss1254a@gmail.com", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -113,7 +113,7 @@ const AmazonBudget1 = () => {
 
   useEffect(() => {
     // Fetch budget limits
-    fetch("http://localhost:6000/budget/threshold/sukesssss1254a@gmail.com")
+    fetch("http://localhost:10000/budget/threshold/sukesssss1254a@gmail.com")
       .then(response => response.json())
       .then(data => {
         const { year, month } = data.message;
@@ -121,7 +121,7 @@ const AmazonBudget1 = () => {
       });
 
     // Fetch yearly purchase history
-    fetch("http://localhost:6000/history/year/sukesssss1254a@gmail.com", {
+    fetch("http://localhost:10000/history/year/sukesssss1254a@gmail.com", {
       method: "POST",
       body: JSON.stringify({ year: selectedYear }),
       headers: {
@@ -142,7 +142,7 @@ const AmazonBudget1 = () => {
       .catch(error => console.error("Error fetching yearly purchase history:", error));
 
     // Fetch monthly purchase history
-    fetch("http://localhost:6000/history/month/sukesssss1254a@gmail.com", {
+    fetch("http://localhost:10000/history/month/sukesssss1254a@gmail.com", {
       method: "POST",
       body: JSON.stringify({ month: selectedMonth, year: selectedYear }),
       headers: {
