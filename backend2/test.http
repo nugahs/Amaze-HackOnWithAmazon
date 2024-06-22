@@ -1,0 +1,46 @@
+# This API call is for the adding the client payment info after completion
+
+POST http://13.235.103.21:5000/payment
+Content-Type: application/json
+
+{
+     "email":"sukesssss1254a@gmail.com",
+      "purchaseAmount":30067660,
+      "purchaseType":"cloths",
+      "paymentCompletionTime":2,
+      "success":1,
+      "method":"CARD"
+}
+
+###
+
+# this API is used to set user tags
+
+POST http://13.235.103.21:5000/tags
+Content-Type: application/json
+
+{
+    "email":"sukesssss1254a@gmail.com",
+    "tags":[
+        "fast",
+        "discount"
+    ]
+}
+
+###
+
+# this API is used to get user tags
+
+GET http://13.235.103.21:5000/tags/sukesssss1254a@gmail.com
+
+
+###
+
+# this API is used to get payment methods
+
+POST http://13.235.103.21:5000/method
+Content-Type: application/json
+
+{
+    "features":["sukesssss1254a@gmail.com",2000,"luxury"]
+}

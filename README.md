@@ -1,1 +1,2 @@
-# Amaze-HackOnWithAmazon
+# Amaze
+Hack On with Amazon
