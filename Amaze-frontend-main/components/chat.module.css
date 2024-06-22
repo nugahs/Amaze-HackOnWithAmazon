@@ -1,0 +1,83 @@
+.chatToggleButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.chatWindow {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.chatHeader {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.chatBody {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.userMessage {
+    margin-bottom: 10px;
+    text-align: right;
+    background-color: #e0f7fa;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.assistantMessage {
+    margin-bottom: 10px;
+    text-align: left;
+    background-color: #f1f8e9;
+    padding: 5px 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.chatFooter {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.chatInput {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.sendButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}

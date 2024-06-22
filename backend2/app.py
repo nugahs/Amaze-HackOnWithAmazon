@@ -332,4 +332,4 @@ if __name__ == '__main__':
     background_thread = Thread(target=monitor_sheet,args=(10,1000))
     background_thread.daemon = True
     background_thread.start()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=7000,debug=True)

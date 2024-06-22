@@ -1,6 +1,6 @@
 # This API call is for the adding the client payment info after completion
 
-POST http://13.235.103.21:5000/payment
+POST http://localhost:7000/payment
 Content-Type: application/json
 
 {
@@ -16,7 +16,7 @@ Content-Type: application/json
 
 # this API is used to set user tags
 
-POST http://13.235.103.21:5000/tags
+POST http://localhost:7000/tags
 Content-Type: application/json
 
 {
@@ -31,14 +31,14 @@ Content-Type: application/json
 
 # this API is used to get user tags
 
-GET http://13.235.103.21:5000/tags/sukesssss1254a@gmail.com
+GET http://localhost:7000/tags/sukesssss1254a@gmail.com
 
 
 ###
 
 # this API is used to get payment methods
 
-POST http://13.235.103.21:5000/method
+POST http://localhost:7000/method
 Content-Type: application/json
 
 {

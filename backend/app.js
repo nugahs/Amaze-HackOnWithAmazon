@@ -6,7 +6,7 @@ const payment  =  require("./router/payment")
 const budget =  require("./router/budget")
 const history =  require("./router/history")
 
-const port = 3000
+const port = 6000
 
 const corsOptions = {
     origin: true, // Allow all origins
