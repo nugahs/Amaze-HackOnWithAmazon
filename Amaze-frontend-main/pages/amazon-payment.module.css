@@ -44,7 +44,7 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  top: 1034px;
+  top: 1087px;
   left: calc(50% - 171px);
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
 }
@@ -1014,7 +1014,7 @@
   width: 100%;
   position: relative;
   background-color: var(--color-white);
-  height: 1200px;
+  height: 1300px;
   overflow: hidden;
   text-align: center;
   font-size: var(--font-size-sm);
@@ -1034,4 +1034,320 @@
   /* Adjust this as necessary */
   padding: 20px;
   border-radius: 10px;
+}
+
+/* Tags styles */
+.tag {
+  display: block;
+  margin: 2px 0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  text-align: center;
+  max-width: fit-content;
+}
+
+
+
+
+.tags {
+  left: 220px;
+  position: relative;
+}
+
+.tag.discount,
+.tag.most,
+.tag.reliable,
+.tag.easy {
+  background-color: green;
+  color: white;
+  position: relative;
+}
+
+.tag.fast {
+  background-color: yellow;
+  color: black;
+  position: relative;
+  height: 20px;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.paymentdetails3,
+.paymentdetails4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showDiscountButton {
+  position: absolute;
+  /* bottom: 80px; */
+  left: calc(50% - 5px);
+  top: 1028px;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.25) inset;
+  width: 331px;
+  height: 53px;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: var(--color-goldenrod);
+
+  border-radius: 4px;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.showDiscountButton:hover {
+  background-color: #f7ca5e;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.popupTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #232f3e;
+}
+
+.popupSubtitle {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #232f3e;
+}
+
+.popupList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.popupListItem {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+
+.offerDesc {
+  font-weight: bold;
+  color: #232f3e;
+}
+
+.offerDetails {
+  display: block;
+  margin-top: 5px;
+  color: #555;
+}
+
+.popupSavings {
+  font-size: 20px;
+  font-weight: bold;
+  color: #008000;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.amazonPopupContent {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.amazonPopupHeader {
+  background-color: #232f3e;
+  color: #fff;
+  padding: 15px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amazonPopupHeader h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.amazonCloseButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.amazonPopupBody {
+  padding: 20px;
+}
+
+.orderDetails {
+  margin-bottom: 20px;
+}
+
+.orderDetails h3 {
+  color: #232f3e;
+  margin-bottom: 10px;
+}
+
+.orderDetails p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.amazonPopupButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.amazonConfirmButton,
+.amazonCancelButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.amazonConfirmButton {
+  background-color: #ff9900;
+  color: #111;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.amazonConfirmButton:hover {
+  background-color: #ffa41c;
+}
+
+.amazonCancelButton {
+  background-color: #f0f0f0;
+  color: #111;
+  border: 1px solid #d5d9d9;
+}
+
+.amazonCancelButton:hover {
+  background-color: #e7e7e7;
+}
+
+.successMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  left: 45% !important;
+  position: relative;
+}
+
+.successMessage h3 {
+  color: #067d62;
+  margin-bottom: 10px;
+}
+
+.successMessage p {
+  color: #333;
+}
+
+.orderSummary {
+  background-color: #f0f2f2;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.orderSummary h4 {
+  color: #232f3e;
+  margin-bottom: 10px;
+}
+
+.orderSummary p {
+  margin: 5px 0;
+  color: #333;
 }

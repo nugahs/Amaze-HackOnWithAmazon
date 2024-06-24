@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #232f3e;
     color: white;
     border: none;
     border-radius: 50%;
@@ -10,74 +10,101 @@
     height: 60px;
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.amazonLogo {
+    background-image: url('../public/amazon-logo-amazon-icon-transparent-free-png.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
 }
 
 .chatWindow {
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     right: 20px;
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 500px;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #d5d9d9;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(15, 17, 17, .15);
     display: flex;
     flex-direction: column;
 }
 
 .chatHeader {
-    background-color: #007bff;
+    background-color: #232f3e;
     color: white;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .chatBody {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     overflow-y: auto;
+    background-color: #f8f8f8;
+}
+
+.userMessage,
+.assistantMessage {
+    margin-bottom: 15px;
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
 }
 
 .userMessage {
-    margin-bottom: 10px;
-    text-align: right;
-    background-color: #e0f7fa;
-    padding: 5px 10px;
-    border-radius: 8px;
-    display: inline-block;
+    background-color: #febd69;
+    color: #111;
+    align-self: flex-end;
+    margin-left: auto;
 }
 
 .assistantMessage {
-    margin-bottom: 10px;
-    text-align: left;
-    background-color: #f1f8e9;
-    padding: 5px 10px;
-    border-radius: 8px;
-    display: inline-block;
+    background-color: #ededed;
+    color: #111;
+    align-self: flex-start;
 }
 
 .chatFooter {
     display: flex;
-    padding: 10px;
-    border-top: 1px solid #ccc;
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #d5d9d9;
 }
 
 .chatInput {
     flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
+    padding: 10px;
+    border: 1px solid #d5d9d9;
     border-radius: 4px;
+    font-size: 14px;
 }
 
 .sendButton {
-    background-color: #007bff;
-    color: white;
+    background-color: #febd69;
+    color: #111;
     border: none;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     margin-left: 10px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+    background-color: #f0ad4e;
 }

@@ -513,3 +513,127 @@
   color: #1e1e1e;
   font-family: var(--font-sf-pro-display);
 }
+
+.preferencesContainer {
+  top: 300px;
+  position: absolute;
+  left: 20px;
+
+}
+
+.preferencesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.preferenceItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkboxInput {
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.checkboxInput:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkboxInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+.checkboxLabel {
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+.amazonProduct {
+  /* existing styles */
+}
+
+.preferencesContainer {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.preferencesBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preferenceItem {
+  display: flex;
+  align-items: center;
+}
+
+.preferenceItem input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+/* existing styles */
+
+
+.userSelectionArea {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  flex-direction: column-reverse;
+}
+
+.selectUserButton {
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  color: #111;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.selectUserButton:hover {
+  background-color: #f4d078;
+}
+
+.selectedUserText {
+  font-size: 14px;
+  color: #111;
+}
+
+.userEmail {
+  font-weight: bold;
+  color: #0066c0;
+}

@@ -1,0 +1,78 @@
+{
+  "data": {
+    "others": {
+      "CARD": {
+        "cashback": [
+          {
+            "desc": "20% of discount on 2000 above transaction max limit 1000",
+            "disc": 20,
+            "maxDisc": 1000,
+            "minPurchase": 2000
+          },
+          {
+            "desc": "30% of discount on 5000 above transaction max limit 2000",
+            "disc": 30,
+            "maxDisc": 2000,
+            "minPurchase": 5000
+          }
+        ],
+        "savings": 1800.0,
+        "tags": {
+          "discount": 1,
+          "easy": 0,
+          "fast": 0,
+          "most": 1,
+          "reliable": 1
+        }
+      },
+      "UPI": {
+        "cashback": [
+          {
+            "desc": "10% of discount on 200 above transaction max limit 100",
+            "disc": 10,
+            "maxDisc": 100,
+            "minPurchase": 200
+          },
+          {
+            "desc": "20% of discount on 2000 above transaction max limit 10000",
+            "disc": 20,
+            "maxDisc": 10000,
+            "minPurchase": 20000
+          }
+        ],
+        "savings": 100,
+        "tags": {
+          "discount": 0,
+          "easy": 0,
+          "fast": 0,
+          "most": 0,
+          "reliable": 0
+        }
+      }
+    },
+    "recommended": {
+      "WALLET": {
+        "cashback": [],
+        "savings": 0,
+        "tags": {
+          "discount": 0,
+          "easy": 0,
+          "fast": 0,
+          "most": 0,
+          "reliable": 1
+        }
+      },
+      "net banking": {
+        "cashback": [],
+        "savings": 0,
+        "tags": {
+          "discount": 0,
+          "easy": 1,
+          "fast": 1,
+          "most": 0,
+          "reliable": 0
+        }
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import axios from "axios";
 import styles from "./amazon-payment.module.css";
+import { useSelectedUser } from "../hooks/userselectes";
 
 const sortPaymentMethods = (methods) => {
   return Object.keys(methods).sort((a, b) => {
@@ -12,38 +13,143 @@ const sortPaymentMethods = (methods) => {
     const cashbackB = methodB.cashback.length;
 
     if (cashbackA !== cashbackB) {
-      return cashbackB - cashbackA; // Sort by number of cashback offers
+      return cashbackB - cashbackA;
     }
 
     const tagsA = Object.keys(methodA.tags).filter((tag) => methodA.tags[tag] === 1).length;
     const tagsB = Object.keys(methodB.tags).filter((tag) => methodB.tags[tag] === 1).length;
 
-    return tagsB - tagsA; // Sort by number of tags
+    return tagsB - tagsA;
   });
+};
+
+const dummyData = {
+  "data": {
+    "others": {
+      "UPI": {
+        "cashback": [
+          {
+            "desc": "10% of discount on 200 above transaction max limit 100",
+            "disc": 10,
+            "maxDisc": 100,
+            "minPurchase": 200
+          },
+          {
+            "desc": "20% of discount on 2000 above transaction max limit 10000",
+            "disc": 20,
+            "maxDisc": 10000,
+            "minPurchase": 20000
+          }
+        ],
+        "savings": 100,
+        "tags": {
+          "discount": 0,
+          "easy": 0,
+          "fast": 0,
+          "most": 1,
+          "reliable": 0
+        }
+      },
+      "WALLET": {
+        "cashback": [],
+        "savings": 0,
+        "tags": {
+          "discount": 0,
+          "easy": 0,
+          "fast": 0,
+          "most": 0,
+          "reliable": 1
+        }
+      }
+    },
+    "recommended": {
+      "CARD": {
+        "cashback": [
+          {
+            "desc": "20% of discount on 2000 above transaction max limit 1000",
+            "disc": 20,
+            "maxDisc": 1000,
+            "minPurchase": 2000
+          },
+          {
+            "desc": "30% of discount on 5000 above transaction max limit 2000",
+            "disc": 30,
+            "maxDisc": 2000,
+            "minPurchase": 5000
+          }
+        ],
+        "savings": 1800.0,
+        "tags": {
+          "discount": 1,
+          "easy": 0,
+          "fast": 0,
+          "most": 1,
+          "reliable": 1
+        }
+      },
+      "net banking": {
+        "cashback": [],
+        "savings": 0,
+        "tags": {
+          "discount": 0,
+          "easy": 1,
+          "fast": 1,
+          "most": 0,
+          "reliable": 0
+        }
+      }
+    }
+  }
 };
 
 const AmazonPayment = () => {
   const router = useRouter();
+  const [selectedUser] = useSelectedUser();
   const [paymentMethods, setPaymentMethods] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState("");
+  const [popupVisible, setPopupVisible] = useState(false);
+  const [popupData, setPopupData] = useState(null);
+  const [confirmationPopupVisible, setConfirmationPopupVisible] = useState(false);
+  const [itemName, setItemName] = useState("Luxury Watch");
+  const [purchaseAmount, setPurchaseAmount] = useState(7577);
+  const [purchaseType, setPurchaseType] = useState("electronics");
+  const [successPopupVisible, setSuccessPopupVisible] = useState(false);
+  const [savedSavings, setSavedSavings] = useState(0);
 
   useEffect(() => {
+    if (!selectedUser) return;
+
     axios
       .post("http://localhost:11000/method", {
-        features: ["sukesssss1254a@gmail.com", 2000, "luxury"],
+        features: [selectedUser, 2000, "luxury"],
       })
       .then((response) => {
-        console.log(response.data); // Log the response for debugging
+        console.log(response.data);
         setPaymentMethods(response.data.data);
+
+        // Store the savings of the recommended method
+        const recommendedMethod = Object.values(response.data.data.recommended)[0];
+        setSavedSavings(recommendedMethod.savings);
       })
       .catch((error) => {
         console.error("Error fetching payment methods:", error);
-      });
-  }, []);
+        setPaymentMethods(dummyData.data);
 
-  const onAddToCartClick = useCallback(() => {
-    router.push("/amazon-redesign-dialogbox");
-  }, [router]);
+        // Store the savings from dummy data
+        const recommendedMethod = Object.values(dummyData.data.recommended)[0];
+        setSavedSavings(recommendedMethod.savings);
+      });
+  }, [selectedUser]);
+
+
+
+  const onShowDiscountClick = useCallback(() => {
+    if (selectedMethod) {
+      const method = paymentMethods.recommended[selectedMethod] || paymentMethods.others[selectedMethod];
+      setPopupData(method);
+      setPopupVisible(true);
+    }
+  }, [selectedMethod, paymentMethods]);
 
   const onBackButtonClick = useCallback(() => {
     router.push("/amazon-product-buy-watch");
@@ -53,7 +159,56 @@ const AmazonPayment = () => {
     setSelectedMethod(method);
   };
 
-  if (!paymentMethods) return <div>Loading...</div>; // Loading indicator
+  const handleClosePopup = () => {
+    setPopupVisible(false);
+  };
+
+  const onContinueClick = useCallback(() => {
+    if (selectedMethod) {
+      setConfirmationPopupVisible(true);
+    } else {
+      alert("Please select a payment method.");
+    }
+  }, [selectedMethod]);
+
+  const handleConfirmPurchase = useCallback(() => {
+    if (!selectedUser) return;
+
+    const apiUrl = "http://localhost:11000/payment";
+    const requestData = {
+      email: selectedUser,
+      purchaseAmount: purchaseAmount,
+      purchaseType: purchaseType,
+      paymentCompletionTime: 2,
+      success: 1,
+      method: selectedMethod,
+      name: "watch",
+      savings: `${savedSavings}`
+    };
+
+    axios.post(apiUrl, requestData)
+      .then(response => {
+        console.log("Request Data:", requestData)
+        console.log("Purchase response:", response.data);
+        if (response.data.status === "success") {
+          setConfirmationPopupVisible(false);
+          setSuccessPopupVisible(true);
+        } else {
+          alert("Payment failed. Please try again.");
+        }
+      })
+      .catch(error => {
+        console.error("Error confirming purchase:", error);
+        alert("An error occurred. Please try again.");
+      });
+  }, [selectedUser, selectedMethod, purchaseAmount, purchaseType, savedSavings]);
+
+
+  if (!selectedUser) {
+    return <div>Please select a user first</div>;
+  }
+
+  if (!paymentMethods) return <div>Loading...</div>;
 
   const { recommended, others } = paymentMethods;
 
@@ -107,25 +262,8 @@ const AmazonPayment = () => {
         </div>
       </div>
 
-      <button className={styles.buttons}>
-        <div className={styles.addToCartAndBuyNow}>
-          <div className={styles.addToCart} onClick={onAddToCartClick}>
-            <button className={styles.addToCart1} />
-            <div className={styles.continue}>continue</div>
-          </div>
-        </div>
-      </button>
-      <section className={styles.moreWaysToPay}>
+      <section className={styles.moreWaysToPay} style={{ height: "100px", overflow: "hidden" }}>
         <div className={styles.mpay}>
-          <button className={styles.cod}>
-            <div className={styles.codChild} />
-            <div className={styles.noselectedradio} />
-            <div className={styles.last}>
-              <img className={styles.lastChild} alt="" src="/rectangle-4.svg" />
-              <div className={styles.mostFrequentUsed}>Most frequent used</div>
-            </div>
-            <div className={styles.cashOnDelivery}>Cash on Delivery</div>
-          </button>
           <button className={styles.emi}>
             <div className={styles.codChild} />
             <div className={styles.paymentdetails}>
@@ -136,6 +274,7 @@ const AmazonPayment = () => {
         </div>
         <b className={styles.moreWaysTo}>MORE WAYS TO PAY</b>
       </section>
+
       <section className={styles.creditDebitCards}>
         <div className={styles.cd}>
           <button className={styles.cd1}>
@@ -148,6 +287,7 @@ const AmazonPayment = () => {
         </div>
         <b className={styles.creditDebit}>CREDIT & DEBIT CARDS</b>
       </section>
+
       <div className={styles.mlRecommendation}>
         <b className={styles.recommendation}>RECOMMENDATION</b>
         {sortedRecommended.map((key) => {
@@ -166,13 +306,14 @@ const AmazonPayment = () => {
               <div className={styles.paymentdetails3}>
                 <b className={styles.amazonPayUpi}>{key}</b>
                 <div className={styles.mvpicici}>{method.detail}</div>
-                <div className={styles.last2}>
-                  <img
-                    className={styles.lastInner}
-                    alt=""
-                    src="/rectangle-41.svg"
-                  />
-                  <div className={styles.fast}>fast</div>
+                <div className={styles.tags}>
+                  {Object.keys(method.tags).map((tag) =>
+                    method.tags[tag] === 1 ? (
+                      <span key={tag} className={`${styles.tag} ${styles[tag]}`}>
+                        {tag}
+                      </span>
+                    ) : null
+                  )}
                 </div>
               </div>
               <div className={styles.noselectedradio3} />
@@ -187,6 +328,7 @@ const AmazonPayment = () => {
           );
         })}
       </div>
+
       <section className={styles.upiSection} id="UpiSection">
         <b className={styles.upi}>UPI</b>
         <div className={styles.upi}>
@@ -206,13 +348,14 @@ const AmazonPayment = () => {
                 <div className={styles.paymentdetails4}>
                   <b className={styles.visa1}>{key}</b>
                   <div className={styles.mvp}>{method.detail}</div>
-                  <div className={styles.offerApplied1}>1 offer applied</div>
-                  <div className={styles.last3}>
-                    <div className={styles.rectangleDiv} />
-                    <div className={styles.saved}>₹200* saved</div>
-                  </div>
-                  <div className={styles.onlineTransactionsDone1}>
-                    20,122 online transactions done without any fail
+                  <div className={styles.tags}>
+                    {Object.keys(method.tags).map((tag) =>
+                      method.tags[tag] === 1 ? (
+                        <span key={tag} className={`${styles.tag} ${styles[tag]}`}>
+                          {tag}
+                        </span>
+                      ) : null
+                    )}
                   </div>
                 </div>
                 {selectedMethod === key && (
@@ -228,8 +371,108 @@ const AmazonPayment = () => {
           })}
         </div>
       </section>
+
+      {popupVisible && (
+        <div className={styles.popupOverlay}>
+          <div className={styles.popupContent}>
+            <button className={styles.closeButton} onClick={handleClosePopup}>
+              &times;
+            </button>
+            <h2 className={styles.popupTitle}>Discount and Savings Information</h2>
+            <div className={styles.popupBody}>
+              <h3 className={styles.popupSubtitle}>Cashback Offers:</h3>
+              <ul className={styles.popupList}>
+                {popupData.cashback.map((offer, index) => (
+                  <li key={index} className={styles.popupListItem}>
+                    <span className={styles.offerDesc}>{offer.desc}:</span>
+                    <span className={styles.offerDetails}>
+                      {offer.disc}% off, Max Discount: ₹{offer.maxDisc}, Minimum Purchase: ₹{offer.minPurchase}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <h3 className={styles.popupSubtitle}>Savings:</h3>
+              <p className={styles.popupSavings}>₹{popupData.savings}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {confirmationPopupVisible && (
+        <div className={styles.popupOverlay}>
+          <div className={styles.amazonPopupContent}>
+            <div className={styles.amazonPopupHeader}>
+              <h2>Review your order</h2>
+              <button className={styles.amazonCloseButton} onClick={() => setConfirmationPopupVisible(false)}>
+                &times;
+              </button>
+            </div>
+            <div className={styles.amazonPopupBody}>
+              <div className={styles.orderDetails}>
+                <h3>Order Summary</h3>
+                <p><strong>Item:</strong> {itemName}</p>
+                <p><strong>Amount:</strong> ₹{purchaseAmount.toLocaleString('en-IN')}</p>
+                <p><strong>Payment Method:</strong> {selectedMethod}</p>
+              </div>
+              <div className={styles.amazonPopupButtons}>
+                <button className={styles.amazonConfirmButton} onClick={handleConfirmPurchase}>
+                  Place your order
+                </button>
+                <button className={styles.amazonCancelButton} onClick={() => setConfirmationPopupVisible(false)}>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className={styles.amazonPaymentChild} />
       <div className={styles.addGiftCard}>Add Gift card or Promo Code</div>
+
+      <button className={styles.showDiscountButton} onClick={onShowDiscountClick}>
+        Show Discount
+      </button>
+
+      <button className={styles.buttons}>
+        <div className={styles.addToCartAndBuyNow}>
+          <div className={styles.addToCart} onClick={onContinueClick}>
+            <button className={styles.addToCart1} />
+            <div className={styles.continue}>continue</div>
+          </div>
+        </div>
+      </button>
+
+      {successPopupVisible && (
+        <div className={styles.popupOverlay}>
+          <div className={styles.amazonPopupContent}>
+            <div className={styles.amazonPopupHeader}>
+              <h2>Order Placed Successfully</h2>
+              <button className={styles.amazonCloseButton} onClick={() => setSuccessPopupVisible(false)}>
+                &times;
+              </button>
+            </div>
+            <div className={styles.amazonPopupBody}>
+              <div className={styles.successMessage}>
+                <img src="/pngegg.png" alt="Success" className={styles.successIcon} />
+                <h3>Thank you, your order has been placed.</h3>
+                <p>Your payment was successful and your order is being processed.</p>
+              </div>
+              <div className={styles.orderSummary}>
+                <h4>Order Summary</h4>
+                <p><strong>Item:</strong> {itemName}</p>
+                <p><strong>Amount:</strong> ₹{purchaseAmount.toLocaleString('en-IN')}</p>
+                <p><strong>Payment Method:</strong> {selectedMethod}</p>
+              </div>
+              <div className={styles.amazonPopupButtons}>
+                <button className={styles.amazonConfirmButton} onClick={() => setSuccessPopupVisible(false)}>
+                  Continue Shopping
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

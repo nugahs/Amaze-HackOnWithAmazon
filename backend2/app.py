@@ -139,9 +139,8 @@ def recommendation_engine(data,cashback):
     df_successful = df[df['success'] == 1]
     total_transactions = df.groupby('method').size()
     successful_transactions = df_successful.groupby('method').size()
-
     reliability = (successful_transactions / total_transactions).fillna(0)
-    success_rate = df_successful['method'].value_counts(normalize=True)
+    success_rate = df_successful['method'].value_counts()
     avg_completion_time = df_successful.groupby('method')['paymentCompletionTime'].mean()
     avg_completion_time_weighted = {}
     for method, avg_time in avg_completion_time.items():
@@ -152,9 +151,9 @@ def recommendation_engine(data,cashback):
     df_weighted = pd.DataFrame.from_dict(avg_completion_time_weighted, orient='index')
     df_weighted=df_weighted[0]
 
-    ratings['most']= rank_methods(success_rate, ascending=False),
+    ratings['most'] = rank_methods(success_rate, ascending=False)
     ratings['reliable']= rank_methods(reliability, ascending=False)
-    ratings['discount'] = discount_series_ranked
+    ratings['discount']= discount_series_ranked
     ratings['fast']= rank_methods(avg_completion_time, ascending=True)
     ratings['easy']= rank_methods(df_weighted, ascending=True)
 
@@ -197,7 +196,6 @@ def monitor_sheet(batch_size=3,interval=10):
 def recommend_payment_method(tags):
 
     global ratings
-
     tag1 =ratings[tags[0]]
     tag2 =ratings[tags[1]]
     score = tag1*tag2
@@ -209,6 +207,8 @@ def recommend_payment_method(tags):
 def post_data():
 
     data = request.get_json()
+
+    print(data)
     values =[
                 [userDB.getUserID(data["email"])
                 ,data["purchaseAmount"]
@@ -220,6 +220,8 @@ def post_data():
            ]
     
     body = {'values': values}
+
+    userDB.addUserPayment(data["email"],data["purchaseAmount"],data["name"],data["purchaseType"],data["savings"])
 
     service.spreadsheets().values().append(
         spreadsheetId=SPREADSHEET_ID, range=RANGE_NAME,
@@ -285,7 +287,7 @@ def predict():
         "savings":discount_ratings[method1],
         "cashback":cashback.get(method1, []),
         "tags":{
-        "most": 1 if ratings['most'][0].get(method1, None)==1 else 0,
+        "most": 1 if ratings['most'][method1]==1 else 0,
         "easy": 1 if ratings['easy'][method1]==1 else 0,
         "fast": 1 if ratings['fast'][method1]==1 else 0,
         "discount": 1 if ratings['discount'][method1]==1 else 0,
@@ -298,7 +300,7 @@ def predict():
         "savings":discount_ratings[method2],
         "cashback":cashback.get(method2, []),
         "tags":{
-        "most": 1 if ratings['most'][0].get(method2, None)==1 else 0,
+        "most": 1 if ratings['most'][method2]==1 else 0,
         "easy": 1 if ratings['easy'][method2]==1 else 0,
         "fast": 1 if ratings['fast'][method2]==1 else 0,
         "discount": 1 if ratings['discount'][method2]==1 else 0,
@@ -312,7 +314,7 @@ def predict():
         "savings":discount_ratings[method],
         "cashback":cashback.get(method, []),
         "tags":{
-        "most": 1 if ratings['most'][0].get(method, None)==1 else 0,
+        "most": 1 if ratings['most'][method]==1 else 0,
         "easy": 1 if ratings['easy'][method]==1 else 0,
         "fast": 1 if ratings['fast'][method]==1 else 0,
         "discount": 1 if ratings['discount'][method]==1 else 0,
@@ -328,6 +330,7 @@ def predict():
 
 
 if __name__ == '__main__':
+
 
     background_thread = Thread(target=monitor_sheet,args=(10,1000))
     background_thread.daemon = True

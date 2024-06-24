@@ -27,8 +27,10 @@ const Chat = () => {
     return (
         <div>
             <button className={styles.chatToggleButton} onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? 'Close Chat' : 'Open Chat'}
+                <span className={styles.amazonLogo} />
             </button>
+
+
             {isOpen && (
                 <div className={styles.chatWindow}>
                     <div className={styles.chatHeader}>Amazon Assistant</div>

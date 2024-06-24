@@ -116,7 +116,7 @@ const AmazonRedesignDialogbox = () => {
         <div className={styles.offer2}>
           <div className={styles.offer2Child} />
           <div className={styles.getUpto500}>
-            Get upto ₹500 discount on purchase on above ₹3000 using Amazon Pay
+            Get upto ₹500 discount on purchase on above 3000 using Amazon Pay
           </div>
           <div className={styles.minOrderValue}>{`Min Order value : `}</div>
           <div className={styles.maxOfferValue}>Max Offer value :</div>

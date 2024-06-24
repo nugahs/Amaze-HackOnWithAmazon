@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       <Head>
-        <title>Amaze</title>
+        <title>amaze</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

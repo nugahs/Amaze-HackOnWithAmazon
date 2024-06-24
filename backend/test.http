@@ -2,7 +2,7 @@
 
 # Add user3 purchase
 
-POST http://localhost:10000/payment/19it103@charusat.edu.in
+POST http://localhost:10000/payment/mastercheif.workplace@gmail.com
 Content-Type: application/json
 
 {

@@ -1,6 +1,8 @@
 import firebase_admin
 from firebase_admin import credentials,db
 import hashlib
+import requests
+import json
 
 cred = credentials.Certificate("./test-1bede-firebase-adminsdk-zv4wf-6a8950e55a.json")
 firebase_admin.initialize_app(cred,{
@@ -45,6 +47,27 @@ class userDB:
         ref = db.reference('/users/')
         users = ref.get()
         return users[id]["tags"]
+
+    def addUserPayment(self,email,amount,name,tag,savings):
+        print(email)
+        url = "http://localhost:10000/payment/"+email
+        data = {
+        "name":name,
+        "amount":amount,
+        "saving":savings,
+        "img":"localhost",
+        "month":4,
+        "year":2024,
+        "tag":tag
+        }
+        headers = {
+            "Content-Type" : "application/json"
+        }
+        json_data = json.dumps(data)
+        headers = {'Content-Type': 'application/json'}
+        requests.post(url, data=json_data, headers=headers,verify=False)
+        
+
     
 
 

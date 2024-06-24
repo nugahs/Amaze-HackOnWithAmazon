@@ -1,15 +1,23 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import "antd/dist/antd.min.css";
 import { Button } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
-// import BottomBar2 from "../components/bottom-bar2";
-
 import BottomBar from "../components/bottom-bar";
 import styles from "./amazon-product-buy-watch.module.css";
+import { useSelectedUser } from "../hooks/userselectes";
 
 const AmazonProductBuyWatch = () => {
   const router = useRouter();
+  const [selectedUser] = useSelectedUser();
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [preferences, setPreferences] = useState({
+    fast: false,
+    reliable: false,
+    most: false,
+    easy: false,
+    discount: false,
+  });
 
   const onIconChevronleftClick = useCallback(() => {
     router.push("/");
@@ -18,6 +26,53 @@ const AmazonProductBuyWatch = () => {
   const onAddToCartClick = useCallback(() => {
     router.push("/amazon-payment");
   }, [router]);
+
+  const showPopup = () => {
+    setIsPopupVisible(true);
+  };
+
+  const hidePopup = () => {
+    setIsPopupVisible(false);
+  };
+
+  const handlePreferenceChange = (preference) => {
+    setPreferences((prev) => ({ ...prev, [preference]: !prev[preference] }));
+  };
+
+  const handlePreferenceSubmit = async () => {
+    if (!selectedUser) {
+      console.error("No user selected");
+      return;
+    }
+
+    const selectedPreferences = Object.keys(preferences).filter(
+      (key) => preferences[key]
+    );
+
+    try {
+      const response = await fetch("http://localhost:11000/tags", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: selectedUser,
+          tags: selectedPreferences,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+      hidePopup();
+      router.push("/amazon-payment");
+    } catch (error) {
+      console.error("Error submitting preferences:", error);
+    }
+  };
+
+  if (!selectedUser) {
+    return <div>Please select a user first</div>;
+  }
+
 
   return (
     <div className={styles.amazonProductBuyWatch}>
@@ -109,7 +164,7 @@ const AmazonProductBuyWatch = () => {
             <div className={styles.addToCart1} onClick={onAddToCartClick} />
             <div className={styles.addToCart2}>Add to Cart</div>
           </button>
-          <button className={styles.buyNow} onClick={onAddToCartClick}>
+          <button className={styles.buyNow} onClick={showPopup}>
             <div className={styles.buyNow1} />
             <div className={styles.buyNow2}>Buy Now</div>
           </button>
@@ -124,6 +179,32 @@ const AmazonProductBuyWatch = () => {
           src="/share-rounded@2x.png"
         />
       </div>
+      {isPopupVisible && (
+        <div className={styles.popup}>
+          <div className={styles.popupContent}>
+            <h2>Select Your Preferences</h2>
+            {Object.keys(preferences).map((pref) => (
+              <div key={pref} className={styles.preferenceItem}>
+                <input
+                  type="checkbox"
+                  id={pref}
+                  checked={preferences[pref]}
+                  onChange={() => handlePreferenceChange(pref)}
+                />
+                <label htmlFor={pref}>
+                  {pref.charAt(0).toUpperCase() + pref.slice(1)}
+                </label>
+              </div>
+            ))}
+            <div className={styles.popupButtons}>
+              <button onClick={hidePopup}>Cancel</button>
+              <button onClick={handlePreferenceSubmit}>Submit</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
 };

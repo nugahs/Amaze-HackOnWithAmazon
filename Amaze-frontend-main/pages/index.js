@@ -1,14 +1,45 @@
-import { useCallback } from "react";
+// pages/AmazonProduct.js
+
+import { useState, useEffect, useCallback } from "react";
+
 import { useRouter } from "next/router";
 import BottomBar1 from "../components/bottom-bar";
+
 import styles from "./index.module.css";
 
-const AmazonProduct = () => {
-  const router = useRouter();
+import UserSelectionPopup from "../components/userselectionpopup";
 
+
+const AmazonProduct = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const router = useRouter();
   const onGroupButtonClick = useCallback(() => {
     router.push("/amazon-budget");
   }, [router]);
+
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('selectedUser');
+    if (storedUser) {
+      setSelectedUser(storedUser);
+    }
+  }, []);
+
+  const handleUserSelection = (user) => {
+    setSelectedUser(user);
+    localStorage.setItem('selectedUser', user);
+    setIsPopupVisible(false);
+  };
+
+  const openUserSelectionPopup = () => {
+    setIsPopupVisible(true);
+  };
+
+  if (!selectedUser) {
+    return <UserSelectionPopup onSelectUser={handleUserSelection} />;
+  }
 
   return (
     <div className={styles.amazonProduct}>
@@ -58,6 +89,22 @@ const AmazonProduct = () => {
           </div>
         </div>
       </div>
+
+      <div className={styles.userSelectionArea}>
+        <button
+          className={styles.selectUserButton}
+          onClick={openUserSelectionPopup}
+        >
+          Select User
+        </button>
+        {selectedUser && (
+          <div className={styles.selectedUserText}>
+            Selected User: <span className={styles.userEmail}>{selectedUser}</span>
+          </div>
+        )}
+      </div>
+
+
       <div className={styles.accoutSettings}>
         <b className={styles.orders}>Orders</b>
         <div className={styles.accoutSettingsChild} />
@@ -128,6 +175,11 @@ const AmazonProduct = () => {
           <img className={styles.vectorIcon2} alt="" src="/vector1.svg" />
         </div>
       </section>
+
+      {isPopupVisible && (
+        <UserSelectionPopup onSelectUser={handleUserSelection} />
+      )}
+
       <BottomBar1 />
     </div>
   );

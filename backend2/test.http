@@ -4,11 +4,12 @@ POST http://localhost:11000/payment
 Content-Type: application/json
 
 {
-     "email":"sukesssss1254a@gmail.com",
-      "purchaseAmount":30067660,
-      "purchaseType":"cloths",
+     "email":"19it103@charusat.edu.in",
+      "purchaseAmount":100,
+      "purchaseType":"money",
       "paymentCompletionTime":2,
       "success":1,
+      "name":"super gap",
       "method":"CARD"
 }
 
@@ -22,8 +23,8 @@ Content-Type: application/json
 {
     "email":"sukesssss1254a@gmail.com",
     "tags":[
-        "fast",
-        "discount"
+        "reliable",
+        "most"
     ]
 }
 
@@ -42,5 +43,5 @@ POST http://localhost:11000/method
 Content-Type: application/json
 
 {
-    "features":["sukesssss1254a@gmail.com",2000,"luxury"]
+    "features":["mastercheif.workplace@gmail.com",7550,"luxury"]
 }
