@@ -2,7 +2,7 @@
 # Amaze
 
 Team Amaze - Shagun, Manan
-
+Semifinalist, Amongst Top 65 teams shortlisted for Semi-finals out of 6000 teams.
 
 
 ## Run budget management backend
