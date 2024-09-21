@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;500&display=swap");
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/SFPRODISPLAYREGULAR.OTF");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("/SFPRODISPLAYBOLD.OTF");
+  font-weight: 600;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-droid-sans: "Droid Sans";
+  --default-bold-body: "SF Pro Text";
+  --font-sf-pro-display: "SF Pro Display";
+  --font-inter: Inter;
+  --font-encode-sans: "Encode Sans";
+
+  /* font sizes */
+  --font-size-xl: 20px;
+  --default-bold-body-size: 17px;
+  --font-size-sm: 14px;
+  --font-size-3xs: 10px;
+  --font-size-13xl: 32px;
+  --font-size-5xl: 24px;
+  --font-size-2xs: 11px;
+  --font-size-base: 16px;
+  --font-size-5xs: 8px;
+  --font-size-xs: 12px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-cadetblue: #51a1a9;
+  --label-color-light-primary: #000;
+  --color-gray-400: #899495;
+  --color-gray-500: #121212;
+  --color-gray-600: #040303;
+  --color-gray-100: #010101;
+  --color-gray-200: rgba(255, 255, 255, 0.01);
+  --color-gray-300: rgba(0, 0, 0, 0.53);
+  --color-paleturquoise: #b3e5d0;
+  --color-powderblue: #99d8df;
+  --color-gainsboro: #d9d9d9;
+  --color-mediumblue: #001fc3;
+  --color-firebrick: #9f1212;
+  --color-lightgray: #dad4d4;
+  --color-lightcoral: #ec8181;
+  --color-whitesmoke: #f5f3f3;
+  --color-khaki: #f3df75;
+  --color-lightgreen: #76e896;
+  --color-limegreen: #2fb72c;
+  --color-orangered: #ca0000;
+  --color-goldenrod: #ffc83c;
+
+  /* Gaps */
+  --gap-54xl: 73px;
+  --gap-24xl: 43px;
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-xs: 12px;
+  --padding-sm: 14px;
+
+  /* Border radiuses */
+  --br-sm: 14px;
+  --br-81xl: 100px;
+  --br-37xl: 56px;
+  --br-4xs: 9px;
+  --br-11xl: 30px;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "amaze",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "@chakra-ui/icons": "^2.0.8",
+    "@chakra-ui/react": "^2.2.6",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.20",
+    "antd": "^4.17.4",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "framer-motion": "^7.1.0",
+    "next": "^14.1.4",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export -o build/",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

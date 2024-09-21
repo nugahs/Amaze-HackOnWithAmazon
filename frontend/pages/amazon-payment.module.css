@@ -1,0 +1,1353 @@
+.addToCart1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: var(--color-goldenrod);
+  position: absolute;
+  top: 0;
+  left: calc(50% - 165.5px);
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.25) inset;
+  width: 331px;
+  height: 53px;
+}
+
+.continue {
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 71.2px);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+  display: inline-block;
+  width: 142.3px;
+}
+
+.addToCart {
+  cursor: pointer;
+}
+
+.addToCart,
+.addToCartAndBuyNow,
+.buttons {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 165.5px);
+  width: 331px;
+  height: 53px;
+}
+
+.buttons {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 1087px;
+  left: calc(50% - 171px);
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.codChild,
+.noselectedradio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke);
+  width: 326px;
+  height: 49.1px;
+}
+
+.noselectedradio {
+  top: 13.8px;
+  left: 12px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 24px;
+  height: 23.6px;
+}
+
+.lastChild,
+.mostFrequentUsed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 20px;
+}
+
+.mostFrequentUsed {
+  top: 3px;
+  left: 2px;
+  font-size: 7px;
+  letter-spacing: 0.1px;
+  line-height: 8px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  width: 63px;
+}
+
+.last {
+  position: absolute;
+  top: 6.7px;
+  left: 250px;
+  width: 65px;
+  height: 23px;
+}
+
+.cashOnDelivery {
+  top: 17.7px;
+  left: 56px;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.cashOnDelivery,
+.cod,
+.emi1 {
+  position: absolute;
+}
+
+.cod {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 69.2px;
+  left: 6px;
+  width: 326px;
+  height: 49.1px;
+}
+
+.emi1 {
+  top: 16.5px;
+  left: 0;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.paymentdetails {
+  position: absolute;
+  height: 69.65%;
+  width: 79.75%;
+  top: 4.89%;
+  right: 3.07%;
+  bottom: 25.46%;
+  left: 17.18%;
+  overflow: hidden;
+}
+
+.emi {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 6px;
+  width: 326px;
+  height: 49.1px;
+}
+
+.moreWaysTo,
+.mpay {
+  position: absolute;
+  left: calc(50% - 169px);
+}
+
+.mpay {
+  top: 23.1px;
+  /* background-color: var(--color-lightgray); */
+  width: 338px;
+  height: 136.9px;
+  overflow: hidden;
+}
+
+.moreWaysTo {
+  top: 0;
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  display: inline-block;
+  width: 245px;
+  height: 15px;
+}
+
+.moreWaysToPay {
+  position: absolute;
+  top: 779px;
+  left: calc(50% - 172px);
+  width: 338px;
+  height: 160px;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--label-color-light-primary);
+  font-family: var(--font-droid-sans);
+}
+
+.cdChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke);
+  width: 326px;
+  height: 50px;
+}
+
+.creditOrDebit {
+  position: absolute;
+  top: 15.8px;
+  left: 0;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.paymentdetails1 {
+  position: absolute;
+  height: 64%;
+  width: 79.75%;
+  top: 4.4%;
+  right: 3.07%;
+  bottom: 31.6%;
+  left: 17.18%;
+  overflow: visible;
+}
+
+.noselectedradio2 {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 24px;
+  height: 24px;
+}
+
+.cd1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 13px;
+  left: 6px;
+  width: 326px;
+  height: 50px;
+}
+
+.cd,
+.creditDebit {
+  position: absolute;
+  left: calc(50% - 169px);
+}
+
+.cd {
+  top: 27px;
+  /* background-color: var(--color-lightgray); */
+  width: 338px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.creditDebit {
+  top: 0;
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+}
+
+.creditDebitCards {
+  position: absolute;
+  top: 664px;
+  left: calc(50% - 172px);
+  width: 338px;
+  height: 107px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--label-color-light-primary);
+  font-family: var(--font-droid-sans);
+}
+
+.otherupiChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke);
+  width: 326px;
+  height: 73px;
+}
+
+.googlePayPhonepe,
+.otherUpiApps {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.googlePayPhonepe {
+  top: 38px;
+  font-size: var(--font-size-5xs);
+  display: inline-block;
+  width: 161px;
+  height: 18px;
+}
+
+.lastItem {
+  left: 0;
+  background-color: var(--color-orangered);
+  width: 64px;
+  height: 18px;
+}
+
+.failed,
+.last1,
+.lastItem {
+  position: absolute;
+  top: 0;
+}
+
+.failed {
+  left: 3px;
+  font-size: var(--font-size-5xs);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  width: 63px;
+  height: 15.8px;
+}
+
+.last1 {
+  left: 199px;
+  width: 66px;
+  height: 18px;
+}
+
+.offerApplied {
+  position: absolute;
+  top: 38px;
+  left: 175px;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-orangered);
+  text-align: center;
+}
+
+.paymentdetails2 {
+  position: absolute;
+  height: 76.71%;
+  width: 79.75%;
+  top: 13.7%;
+  right: 3.07%;
+  bottom: 9.59%;
+  left: 17.18%;
+  overflow: visible;
+}
+
+.noselectedradio3 {
+  position: absolute;
+  top: 24px;
+  left: 15px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 24px;
+  height: 24px;
+}
+
+.otherupi {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  /* top: 101px; */
+  left: -14px;
+  width: 326px;
+  height: 73px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.amazonPayUpi,
+.mvpicici {
+  position: absolute;
+  top: 10px;
+  left: 7px;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.mvpicici {
+  top: 38px;
+  font-size: var(--font-size-sm);
+}
+
+.fast,
+.lastInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 18px;
+}
+
+.fast {
+  left: 3px;
+  font-size: var(--font-size-2xs);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-gray-500);
+  text-align: center;
+  display: inline-block;
+  width: 63px;
+  height: 15.8px;
+}
+
+.last2,
+.paymentdetails3 {
+  position: absolute;
+  top: 0;
+  left: 208px;
+  width: 66px;
+  height: 18px;
+  overflow: visible;
+}
+
+.paymentdetails3 {
+  height: 76.71%;
+  width: 82.82%;
+  top: 12.33%;
+  right: 2.76%;
+  bottom: 10.96%;
+  left: 14.42%;
+  overflow: visible;
+}
+
+.amazonupi {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  /* top: 13px; */
+  left: -14px;
+  width: 326px;
+  height: 73px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.onlineTransactionsDone {
+  position: absolute;
+  top: 58px;
+  left: 224px;
+  letter-spacing: 0.1px;
+  line-height: 8px;
+  display: inline-block;
+  width: 99px;
+  height: 16px;
+}
+
+.upi,
+.upiLogoIcon1693161 {
+  position: absolute;
+  left: calc(50% - 169px);
+}
+
+.upi {
+  top: 0px;
+  /* background-color: var(--color-lightgray); */
+  width: 338px;
+  height: 189px;
+  overflow: hidden;
+}
+
+.upiLogoIcon1693161 {
+  top: 0;
+  width: 52px;
+  height: 26px;
+  object-fit: cover;
+}
+
+.upiSection {
+  position: absolute;
+  top: 426px;
+  left: calc(50% - 172px);
+  width: 338px;
+  height: 225px;
+  text-align: right;
+  font-size: var(--font-size-5xs);
+  color: var(--color-gray-400);
+  font-family: var(--font-droid-sans);
+}
+
+.recommendation {
+  position: relative;
+  top: 0;
+  left: 6px;
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  margin: 10px;
+}
+
+.visaChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-color: var(--color-khaki); */
+  background-color: var(--color-whitesmoke);
+  width: 326px;
+  height: 95.6px;
+}
+
+.mvp,
+.offerApplied1,
+.visa1 {
+  position: absolute;
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  text-align: center;
+}
+
+.visa1 {
+  top: 32px;
+  left: 8px;
+  font-size: var(--font-size-5xl);
+  color: var(--label-color-light-primary);
+}
+
+.mvp,
+.offerApplied1 {
+  top: 68px;
+  font-size: var(--font-size-xs);
+}
+
+.mvp {
+  left: 8px;
+  color: var(--label-color-light-primary);
+  white-space: pre-wrap;
+}
+
+.offerApplied1 {
+  left: 175px;
+  color: var(--color-limegreen);
+}
+
+.rectangleDiv {
+  top: 2px;
+  left: 0;
+  background-color: var(--color-lightgreen);
+  width: 64px;
+  height: 18px;
+}
+
+.last3,
+.rectangleDiv,
+.saved {
+  position: absolute;
+}
+
+.saved {
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-5xs);
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+  display: inline-block;
+  width: 63px;
+  height: 15.8px;
+}
+
+.last3 {
+  top: 3px;
+  left: 196px;
+  width: 64px;
+  height: 20px;
+}
+
+.onlineTransactionsDone1 {
+  position: absolute;
+  top: 49px;
+  left: 161px;
+  font-size: var(--font-size-5xs);
+  letter-spacing: 0.1px;
+  line-height: 8px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-gray-400);
+  text-align: right;
+  display: inline-block;
+  width: 99px;
+  height: 16px;
+}
+
+.paymentdetails4 {
+  position: absolute;
+  height: 96.88%;
+  width: 79.75%;
+  top: 3.12%;
+  right: 3.07%;
+  bottom: 0;
+  left: 17.18%;
+  overflow: visible;
+}
+
+.selectedpaymentIcon {
+  position: absolute;
+
+  left: 17.18% !important;
+  overflow: visible !important;
+  height: 24.95% !important;
+  width: 7.36% !important;
+  top: 45.3% !important;
+  right: 88.04% !important;
+  bottom: 40.75% !important;
+  left: 4.6% !important;
+  max-width: 24px !important;
+  max-height: 15px !important;
+  z-index: 100;
+
+}
+
+.amazonChild,
+.visa {
+  position: absolute;
+  width: 326px;
+}
+
+.visa {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 5px;
+  /* left: 6px; */
+  height: 96.2px;
+  position: relative !important;
+  margin: 5px;
+}
+
+.amazonChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-whitesmoke);
+  height: 87.7px;
+}
+
+.amazonPay,
+.availableBalanceXyz {
+  position: absolute;
+  top: 30px;
+  left: 4px;
+  font-size: var(--font-size-5xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--label-color-light-primary);
+  text-align: center;
+}
+
+.availableBalanceXyz {
+  top: 61px;
+  font-size: var(--font-size-xs);
+}
+
+.last4,
+.lastChild1 {
+  position: absolute;
+  height: 18px;
+}
+
+.lastChild1 {
+  top: 0;
+  left: 0;
+  background-color: var(--color-lightcoral);
+  width: 64px;
+}
+
+.last4 {
+  top: 7px;
+  left: 194px;
+  width: 66px;
+}
+
+.offerApplied2 {
+  position: absolute;
+  top: 61px;
+  left: 175px;
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  font-family: var(--font-droid-sans);
+  color: var(--color-limegreen);
+  text-align: center;
+}
+
+.last5,
+.paymentdetails5 {
+  position: absolute;
+  top: 27px;
+  left: 194px;
+  width: 64px;
+  height: 20px;
+}
+
+.paymentdetails5 {
+  height: 97.38%;
+  width: 79.75%;
+  top: 1.14%;
+  right: 3.07%;
+  bottom: 1.48%;
+  left: 17.18%;
+  overflow: hidden;
+}
+
+.noselectedradio5 {
+  position: absolute;
+  top: 38px;
+  left: 13px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 24px;
+  height: 26px;
+}
+
+.noselectedradio6 {
+  position: absolute;
+  top: 35px;
+  left: 13px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro);
+  width: 24px;
+  height: 26px;
+}
+
+.amazon {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  margin: 5px;
+  /* top: 20px; */
+  /* left: 6px; */
+  width: 326px;
+  height: 87.7px;
+}
+
+.mlRecommendation,
+.selectAPayment {
+  position: absolute;
+  left: calc(50% - 172px);
+}
+
+.mlRecommendation {
+  top: 178px;
+  /* background-color: var(--color-lightgray); */
+  width: 338px;
+  height: 240px;
+  overflow: hidden;
+  color: var(--color-gray-600);
+}
+
+.selectAPayment {
+  top: 136px;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+}
+
+.topBar1,
+.topBar2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-powderblue);
+  width: 207px;
+  height: 116px;
+}
+
+.topBar1 {
+  left: 2px;
+  background-color: var(--color-paleturquoise);
+  width: 398px;
+}
+
+.backButton,
+.layer2Icon {
+  position: absolute;
+  overflow: hidden;
+}
+
+.layer2Icon {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.backButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 58px;
+  left: 23px;
+  width: 24px;
+  height: 24px;
+}
+
+.colorBackgroundHeader,
+.topBar3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 116px;
+}
+
+.topBar3 {
+  backdrop-filter: blur(150px);
+  background-color: var(--color-gray-200);
+  width: 398px;
+}
+
+.colorBackgroundHeader {
+  width: 400px;
+}
+
+.cancel {
+  position: absolute;
+  top: 58px;
+  left: 330px;
+  letter-spacing: -0.41px;
+  line-height: 24px;
+  display: inline-block;
+  width: 52px;
+}
+
+.topBarUi,
+.topBarUi1 {
+  width: 400px;
+  height: 116px;
+}
+
+.topBarUi1 {
+  position: relative;
+}
+
+.topBarUi {
+  top: 0;
+  left: calc(50% - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.div,
+.notchIcon,
+.topBarUi {
+  position: absolute;
+}
+
+.notchIcon {
+  top: -2px;
+  left: calc(50% - 82px);
+  width: 164px;
+  height: 32px;
+}
+
+.div {
+  top: 1px;
+  left: 0;
+  letter-spacing: -0.41px;
+  line-height: 22px;
+  font-weight: 600;
+  display: inline-block;
+  width: 54px;
+  height: 20px;
+}
+
+.batteryIcon,
+.leftSide,
+.statusbarTime {
+  position: absolute;
+  width: 54px;
+  height: 21px;
+}
+
+.statusbarTime {
+  top: 0;
+  left: calc(50% - 27px);
+  border-radius: var(--br-37xl);
+}
+
+.batteryIcon,
+.leftSide {
+  top: 14px;
+  left: calc(50% - 171px);
+}
+
+.batteryIcon {
+  top: 0;
+  left: calc(50% + 11.3px);
+  width: 27.4px;
+  height: 13px;
+}
+
+.wifiIcon {
+  position: relative;
+  width: 17px;
+  height: 12px;
+}
+
+.iconMobileSignal,
+.rightSide {
+  position: absolute;
+  top: 1px;
+  left: calc(50% - 19px);
+  width: 18px;
+  height: 12px;
+}
+
+.rightSide {
+  top: 19px;
+  left: calc(50% + 94px);
+  width: 77.4px;
+  height: 13px;
+}
+
+.statusbarIphone13 {
+  width: 400px;
+  position: relative;
+  height: 49px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.navbar,
+.topBar {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 200px);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--color-gray-100);
+  font-family: var(--default-bold-body);
+}
+
+.topBar {
+  width: 400px;
+  height: 116px;
+  font-size: var(--default-bold-body-size);
+  font-family: var(--font-inter);
+}
+
+.amazonPaymentChild {
+  position: absolute;
+  top: 961px;
+  left: calc(50% - 170px);
+  background-color: var(--color-gainsboro);
+  width: 333px;
+  height: 55px;
+}
+
+.addGiftCard {
+  position: absolute;
+  top: 978px;
+  left: calc(50% - 110px);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.38px;
+  line-height: 17.5px;
+  color: #317dd5;
+}
+
+.vectorIcon {
+  position: absolute;
+  top: 979px;
+  left: calc(50% - 148px);
+  width: 12px;
+  height: 8px;
+}
+
+.amazonPayment {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 1300px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--label-color-light-primary);
+  font-family: var(--font-droid-sans);
+}
+
+.mlRecommendation,
+.upiSection,
+.cd,
+.mpay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-lightgray);
+  ;
+  /* Adjust this as necessary */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Tags styles */
+.tag {
+  display: block;
+  margin: 2px 0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  text-align: center;
+  max-width: fit-content;
+}
+
+
+
+
+.tags {
+  left: 220px;
+  position: relative;
+}
+
+.tag.discount,
+.tag.most,
+.tag.reliable,
+.tag.easy {
+  background-color: green;
+  color: white;
+  position: relative;
+}
+
+.tag.fast {
+  background-color: yellow;
+  color: black;
+  position: relative;
+  height: 20px;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.paymentdetails3,
+.paymentdetails4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.showDiscountButton {
+  position: absolute;
+  /* bottom: 80px; */
+  left: calc(50% - 5px);
+  top: 1028px;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.25) inset;
+  width: 331px;
+  height: 53px;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: var(--color-goldenrod);
+
+  border-radius: 4px;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.showDiscountButton:hover {
+  background-color: #f7ca5e;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popupContent {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.popupTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #232f3e;
+}
+
+.popupSubtitle {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #232f3e;
+}
+
+.popupList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.popupListItem {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+}
+
+.offerDesc {
+  font-weight: bold;
+  color: #232f3e;
+}
+
+.offerDetails {
+  display: block;
+  margin-top: 5px;
+  color: #555;
+}
+
+.popupSavings {
+  font-size: 20px;
+  font-weight: bold;
+  color: #008000;
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.amazonPopupContent {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.amazonPopupHeader {
+  background-color: #232f3e;
+  color: #fff;
+  padding: 15px 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amazonPopupHeader h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.amazonCloseButton {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.amazonPopupBody {
+  padding: 20px;
+}
+
+.orderDetails {
+  margin-bottom: 20px;
+}
+
+.orderDetails h3 {
+  color: #232f3e;
+  margin-bottom: 10px;
+}
+
+.orderDetails p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.amazonPopupButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.amazonConfirmButton,
+.amazonCancelButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.amazonConfirmButton {
+  background-color: #ff9900;
+  color: #111;
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.amazonConfirmButton:hover {
+  background-color: #ffa41c;
+}
+
+.amazonCancelButton {
+  background-color: #f0f0f0;
+  color: #111;
+  border: 1px solid #d5d9d9;
+}
+
+.amazonCancelButton:hover {
+  background-color: #e7e7e7;
+}
+
+.successMessage {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.successIcon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  left: 45% !important;
+  position: relative;
+}
+
+.successMessage h3 {
+  color: #067d62;
+  margin-bottom: 10px;
+}
+
+.successMessage p {
+  color: #333;
+}
+
+.orderSummary {
+  background-color: #f0f2f2;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.orderSummary h4 {
+  color: #232f3e;
+  margin-bottom: 10px;
+}
+
+.orderSummary p {
+  margin: 5px 0;
+  color: #333;
+}
