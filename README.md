@@ -4,7 +4,6 @@
 Team Amaze - Shagun, Manan
 
 
-
 ## Run budget management backend
 
 ##### To run budget management, run the following command
@@ -16,7 +15,7 @@ Team Amaze - Shagun, Manan
 ####
 
 ```bash
-Amaze> cd backend
+Amaze> cd budget-tracker
 backend> npm install
 backend> node app.js
 ```
@@ -32,7 +31,7 @@ backend> node app.js
 
 
 ```bash
-Amaze> cd backend2
+Amaze> cd recommendation-engine
 backend2> pip install -r requirements.txt
 backend2> python app.py
 ```
