@@ -1,0 +1,45 @@
+.paymentMethods {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+.recommended,
+.upi {
+    margin: 10px 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+}
+
+.card p {
+    margin: 4px 0;
+}
+
+.tags {
+    margin-top: 8px;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-right: 4px;
+}
+
+.container {
+    left: calc(50% - 171px);
+}

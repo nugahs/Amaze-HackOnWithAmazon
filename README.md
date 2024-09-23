@@ -5,7 +5,6 @@ Team Amaze - Shagun, Manan
 
 Semifinalist, Amongst Top 65 teams shortlisted for Semi-finals out of 6000 teams.
 
-
 ## Run budget management backend
 
 ##### To run budget management, run the following command
@@ -17,7 +16,7 @@ Semifinalist, Amongst Top 65 teams shortlisted for Semi-finals out of 6000 teams
 ####
 
 ```bash
-Amaze> cd backend
+Amaze> cd budget-tracker
 backend> npm install
 backend> node app.js
 ```
@@ -33,7 +32,7 @@ backend> node app.js
 
 
 ```bash
-Amaze> cd backend2
+Amaze> cd recommendation-engine
 backend2> pip install -r requirements.txt
 backend2> python app.py
 ```

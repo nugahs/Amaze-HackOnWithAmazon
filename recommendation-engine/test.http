@@ -1,0 +1,47 @@
+# This API call is for the adding the client payment info after completion
+
+POST http://localhost:11000/payment
+Content-Type: application/json
+
+{
+     "email":"19it103@charusat.edu.in",
+      "purchaseAmount":100,
+      "purchaseType":"money",
+      "paymentCompletionTime":2,
+      "success":1,
+      "name":"super gap",
+      "method":"CARD"
+}
+
+###
+
+# this API is used to set user tags
+
+POST http://localhost:11000/tags
+Content-Type: application/json
+
+{
+    "email":"sukesssss1254a@gmail.com",
+    "tags":[
+        "reliable",
+        "most"
+    ]
+}
+
+###
+
+# this API is used to get user tags
+
+GET http://localhost:11000/tags/sukesssss1254a@gmail.com
+
+
+###
+
+# this API is used to get payment methods
+
+POST http://localhost:11000/method
+Content-Type: application/json
+
+{
+    "features":["mastercheif.workplace@gmail.com",7550,"luxury"]
+}

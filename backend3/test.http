@@ -1,7 +1,0 @@
-
-POST http://localhost:3001/chat
-Content-Type: application/json
-
-{
-     "prompt":"upi id is successful"
-}

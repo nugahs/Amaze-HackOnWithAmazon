@@ -1,0 +1,81 @@
+/* UserSelectionPopup.module.css */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100px;
+    left: 36%;
+    height: auto;
+    position: relative;
+}
+
+.h2 {
+    color: #111;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.userButton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: #111;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.userButton:hover {
+    background-color: #e7e7e7;
+}
+
+.userIcon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.addAccountButton {
+    width: 100%;
+    padding: 15px;
+    background-color: #FFD814;
+    border: 1px solid #FCD200;
+    border-radius: 8px;
+    color: #111;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addAccountButton:hover {
+    background-color: #F7CA00;
+}
